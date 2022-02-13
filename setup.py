@@ -14,4 +14,8 @@ setup(
     linkedin='https://linkedin.com/in/amir-shamsi',
 
     install_requires=[],
+
+    setup_requires=['pytest-runner'],
+    tests_require=['pytest'],
+    test_suite='tests',
 )
