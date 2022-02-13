@@ -12,4 +12,6 @@ setup(
 
     github='https://github.com/Amir-Shamsi',
     linkedin='https://linkedin.com/in/amir-shamsi',
+
+    install_requires=[],
 )
