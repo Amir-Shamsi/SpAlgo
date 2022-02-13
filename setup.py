@@ -9,4 +9,7 @@ setup(
     author='Amir Shamsi',
 
     license='MIT',
+
+    github='https://github.com/Amir-Shamsi',
+    linkedin='https://linkedin.com/in/amir-shamsi',
 )
