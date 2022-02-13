@@ -8,7 +8,8 @@ def find_max_subsequence_in_array(seq: list[Union[int, float]]) -> tuple[Union[f
     _last_index = -1
     """
         Calculate the maximum value of longest subsequence of the
-         sequence given to the function;
+         sequence given to the function in the complexity of O(n);
+         
         The given sequence is a list of type int or float by the
          other word must be a numerical list.
 
