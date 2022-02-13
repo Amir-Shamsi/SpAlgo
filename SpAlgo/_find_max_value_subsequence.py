@@ -27,3 +27,13 @@ def find_max_subsequence_in_array(seq: list[Union[int, float]]) -> tuple[Union[f
        :var max_sum: will hold the max sum of the longest subsequence
        :var _last_index: will hold the last index of subsequence
     """
+    for _index in range(len(seq)):
+        _current_sum += seq[_index]
+        _indexes.append(_index)
+        if _current_sum < 0:
+            _current_sum = 0
+            _indexes.clear()
+        if _current_sum > max_sum:
+            max_sum = _current_sum
+            _last_index = _index
+    return max_sum, [_indexes[0], _last_index]
