@@ -6,6 +6,8 @@ def test_findLongestMaxSubSeq():
                  -0.07442468,  0.59530056, -1.98011873,  0.61534235,  0.88164606,  1.54469791,
                  -1.68645546,  0.11235733]
     res = SubSeq.LongestMax(_sequence)
+
+    # checking the outputs
     assert res.maximum_sum() == 5.20187816
     assert res.start_index == 1
     assert res.end_index == 7
