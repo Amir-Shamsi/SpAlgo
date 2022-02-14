@@ -43,9 +43,9 @@ print('--------- Subsequence Longest Maximum value ---------')
 print('data sequence', '->', BOLD_START, data_sequence, NORM)
 
 # printing the result
-print('The maximum result of longest subsequence is', BOLD_START, ORANGE_COLOR,
-      maximum_summation, NORM, 'and start index is', BOLD_START, ORANGE_COLOR,
-      start_index, NORM, 'and end index is', BOLD_START, ORANGE_COLOR, end_index,
+print('The maximum result of longest subsequence is', BOLD_START + ORANGE_COLOR,
+      maximum_summation, NORM, 'and start index is', BOLD_START + ORANGE_COLOR,
+      start_index, NORM, 'and end index is', BOLD_START + ORANGE_COLOR, end_index,
       NORM)
 
 # Printing the subsequence
