@@ -72,4 +72,4 @@ class LongestMax:
         :return: will return the subsequence which is found as longest with
                  maximum summation
         """
-        return self.sequence[self.start_index: self.end_index]
+        return self.sequence[self.start_index: self.end_index + 1]
