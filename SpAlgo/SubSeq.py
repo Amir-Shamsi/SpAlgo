@@ -66,3 +66,10 @@ class LongestMax:
         :return: the maximum value of the subsequence
         """
         return self._maximum_summation
+
+    def subsequence(self):
+        """
+        :return: will return the subsequence which is found as longest with
+                 maximum summation
+        """
+        return self.sequence[self.start_index: self.end_index]
