@@ -23,11 +23,29 @@ class LongestMax:
         self.__calculate_max_longest_subsequence()
 
     def __calculate_max_longest_subsequence(self):
+        """
+          the calculate_max_longest_subsequence will calculate the maximum value of the
+            longest subsequence
+
+            type:
+           :return: returns no info but will store following information->
+                |---- 1. first element is the max sum of the sequence
+                +-----2. the second is index of start and end of the
+                         subsequence
+        """
         # variables
         _current_sum = 0
         max_sum = -float('inf')
         _indexes = []
         _last_index = -1
+        """
+          type:
+           :var _current_sum: every element of list we go through will
+                be added to this variable
+           :var _indexes: will hold the first index of the the subsequence
+           :var max_sum: will hold the max sum of the longest subsequence
+           :var _last_index: will hold the last index of subsequence
+        """
         for _index in range(len(self.sequence)):
             _current_sum += self.sequence[_index]
             _indexes.append(_index)
