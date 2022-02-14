@@ -61,3 +61,8 @@ class LongestMax:
         self.end_index = _last_index
         return
 
+    def maximum_sum(self):
+        """
+        :return: the maximum value of the subsequence
+        """
+        return self._maximum_summation
