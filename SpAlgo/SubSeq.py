@@ -20,6 +20,8 @@ class LongestMax:
             :param sequence: sequence of numbers which will be given at first
         """
         self.sequence = sequence
+        self.__calculate_max_longest_subsequence()
+
     def __calculate_max_longest_subsequence(self):
         # variables
         _current_sum = 0
