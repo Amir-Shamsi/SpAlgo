@@ -3,6 +3,6 @@ The python source code.
 """
 from SpAlgo import SubSeq
 
-__version__ = "0.10.0"
-__all__ = ["longestMaxSubSeq"]
+__version__ = "0.1.0"
+__all__ = ["SubSeq.py"]
 
