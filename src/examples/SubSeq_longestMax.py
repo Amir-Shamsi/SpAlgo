@@ -12,7 +12,7 @@ BOLD_START = '\033[1m'
 NORM = '\033[0m'
 
 # example of sequence of numerical data
-data_sequence = [-1, 3, -2.2, 5, 2, 12.1, -23, 4, 8, 6.5, 4, -10, 12, 15]
+data_sequence = [-1, 3, -2.2, 5, 2, 12.1, -23, 4, 8, 6.5, 4, -10, 12, -1, 15]
 
 
 """ 
