@@ -36,3 +36,17 @@ end_index = longestMax.end_index
 # get subsequence
 subsequence = longestMax.subsequence()
 
+# we print to see the result
+print('--------- Subsequence Longest Maximum value ---------')
+
+# printing the data sequence
+print('data sequence', '->', BOLD_START, data_sequence, NORM)
+
+# printing the result
+print('The maximum result of longest subsequence is', BOLD_START, ORANGE_COLOR,
+      maximum_summation, NORM, 'and start index is', BOLD_START, ORANGE_COLOR,
+      start_index, NORM, 'and end index is', BOLD_START, ORANGE_COLOR, end_index,
+      NORM)
+
+# Printing the subsequence
+print('found subsequence', '->', BOLD_START, subsequence, NORM)
