@@ -15,3 +15,24 @@ NORM = '\033[0m'
 data_sequence = [-1, 3, -2.2, 5, 2, 12.1, -23, 4, 8, 6.5, 4, -10, 12, 15]
 
 
+""" 
+    passing it into the "longestMax()" function inside "SubSeq"
+    and storing the result into the variable `result`
+"""
+longestMax = SubSeq.LongestMax(data_sequence)
+
+# getting maximum sum from result
+maximum_summation = longestMax.maximum_sum()
+
+"""
+    getting the start and end index from `longestMax` will looks like
+    this:
+    indexes -> (start index, end index)
+"""
+# extract the indexes into the separated variables
+start_index = longestMax.start_index
+end_index = longestMax.end_index
+
+# get subsequence
+subsequence = longestMax.subsequence()
+
