@@ -6,13 +6,13 @@ setup(
 
     version='0.1.0',
     description='SpAlgo has some special algorithms to help you in your education and your tasks.',
-    author='Amir Shamsi',
-    url='https://github.com/Amir-Shamsi/SpAlgo',
+    author='Mohammad Keshavarzi & Amir Shamsi',
+    url='https://github.com/Amir-Shamsi/SpAlgo & https://github.com/mohammadkeshavarzi/SpAlgo',
 
     license='MIT',
 
-    github='https://github.com/Amir-Shamsi',
-    linkedin='https://linkedin.com/in/amir-shamsi',
+    github='https://github.com/mohammadkeshavarzi/SpAlgo & https://github.com/Amir-Shamsi',
+    linkedin='https://linkedin.com/in/amir-shamsi & https://linkedin.com/in/mohammad-keshavarzi-1b1671218',
 
     install_requires=[],
 
