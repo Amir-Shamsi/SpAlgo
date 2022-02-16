@@ -51,7 +51,7 @@ class MatrixPeak:
                     _current_row += 1
                     _any_step = True
 
-            if _current_row - 1 > 0:
+            if _current_row - 1 >= 0:
                 if self._inner_matrix[_current_row - 1][_current_column] > current_element:
                     _current_row -= 1
                     _any_step = True
@@ -61,7 +61,7 @@ class MatrixPeak:
                     _current_column += 1
                     _any_step = True
 
-            if _current_column - 1 > 0:
+            if _current_column - 1 >= 0:
                 if self._inner_matrix[_current_row][_current_column - 1] > current_element:
                     _current_column -= 1
                     _any_step = True
