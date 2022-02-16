@@ -27,6 +27,32 @@ class MatrixPeak:
                 _row = row
         return _max, _row
 
+    def _is_edge(self, side, row=None, column=None):
+        """
+        :param row:
+        :param column:
+        :param side: is one of ['u', 'd', 'l', 'r']
+        :return: boolean
+        """
+        match side:
+            case 'u':  # up
+                if row - 1 < 0:
+                    return False
+                return True
+            case 'd':  # down
+                if row + 1 > self._row_size - 1:
+                    return False
+                return True
+            case 'l':  # left
+                if column - 1 < 0:
+                    return False
+                return True
+            case 'r':  # right
+                if column + 1 > self._column_size - 1:
+                    return False
+                return True
+        return False
+
     def findPeak(self) -> dict[str, Union[int, float]]:
         """
         Function will find a peak inside the given matrix.
@@ -46,22 +72,22 @@ class MatrixPeak:
         _any_step = False
         while True:
             current_element = self._inner_matrix[_current_row][_current_column]
-            if _current_row + 1 <= self._row_size - 1:
+            if self._is_edge(side='d', row=_current_row):
                 if self._inner_matrix[_current_row + 1][_current_column] > current_element:
                     _current_row += 1
                     _any_step = True
 
-            if _current_row - 1 >= 0:
+            if self._is_edge(side='u', row=_current_row):
                 if self._inner_matrix[_current_row - 1][_current_column] > current_element:
                     _current_row -= 1
                     _any_step = True
 
-            if _current_column + 1 <= self._column_size - 1:
+            if self._is_edge(side='r', column=_current_column):
                 if self._inner_matrix[_current_row][_current_column + 1] > current_element:
                     _current_column += 1
                     _any_step = True
 
-            if _current_column - 1 >= 0:
+            if self._is_edge(side='l', column=_current_column):
                 if self._inner_matrix[_current_row][_current_column - 1] > current_element:
                     _current_column -= 1
                     _any_step = True
