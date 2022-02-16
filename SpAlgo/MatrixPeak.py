@@ -19,6 +19,14 @@ class MatrixPeak:
         self._column_size = len(matrix[0])
 
     def findPeak(self) -> dict[str, Union[int, float]]:
+        """
+        Function will find a peak inside the given matrix.
+
+        :return: a dictionary contains these elements->
+            * :var peak: contain the peak found inside matrix.
+            * :var column: the column of the peak has been found.
+            * :var row: the row of the peak has been found.
+        """
         _middle_column = self._column_size // 2
         _middle_column_max_element = max(self._inner_matrix[_middle_column])
 
