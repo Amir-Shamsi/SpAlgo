@@ -4,12 +4,14 @@ from typing import Union
 class ArrayPeak:
     _inner_array = []
     _size = 0
+    _all_peaks = []
     """
     :var _inner_array: 
     """
     def __init__(self, array: list[Union[int, float]]):
         self._inner_array = array
         self._size = len(self._inner_array)
+        self._all_peaks = ArrayPeak.findAllPeaks(self)
 
     def findPeak(self) -> tuple[Union[int, float], int]:
         """
@@ -59,20 +61,35 @@ class ArrayPeak:
 
         return list_of_peaks
 
-    def findFirstPeak(self):
-        if self._inner_array[0] > self._inner_array[1]:
-            return self._inner_array[0], 0
-        for i in range(1, self._size - 1):
-            current_element = self._inner_array[i]
-            if (current_element > self._inner_array[i + 1]) and (current_element > self._inner_array[i - 1]):
-                 return self._inner_array[i], i
 
-        if self._inner_array[self._size - 1] > self._inner_array[self._size - 2]:
-            return self._inner_array[self._size - 1], self._size - 1 
+    
+    """
+        var _all_peaks defined to use in functions below
+    """
+
+    def findFirstPeak(self) -> tuple[int, int]:
+        first_peak = self._all_peaks[0][0]
+        return first_peak, self._inner_array.index(first_peak) 
+
+    def findMaxPeak(self) -> tuple[int, int]:
+        max_peak = max(self._all_peaks)[0]
+        return max_peak, self._inner_array.index(max_peak) 
+
+    def findMinPeak(self) -> tuple[int, int]:
+        min_peak = min(self._all_peaks)[0]
+        return min_peak, self._inner_array.index(min_peak)
+
+
+    
         
     
 
 
+class1 = ArrayPeak([2, 5, 1, 7, 8, 9, 4, 12, 3, 5, 6, 8, 10, 3])
+print(class1.findAllPeaks())
+print(class1.findFirstPeak())
+print(class1.findMaxPeak())
+print(class1.findMinPeak())
 
 
 
