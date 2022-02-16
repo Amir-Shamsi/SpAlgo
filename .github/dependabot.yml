@@ -6,7 +6,7 @@
 version: 2
 updates:
 
-  - package-ecosystem: "pip"
+    - package-ecosystem: "pip"
       directory: "/"
       schedule:
         interval: "daily"
@@ -15,9 +15,9 @@ updates:
         # Pytest and any packages starting "pytest"
         - dependency-name: "pytest*"
           dependency-type: "direct"
-
+        
         - dependency-name: "pytest-runner"
           dependency-type: "direct"
-
+        
         - dependency-name: "setuptools"
           dependency-type: "direct"
