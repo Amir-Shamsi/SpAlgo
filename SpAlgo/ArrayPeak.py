@@ -85,11 +85,3 @@ class ArrayPeak:
     
 
 
-class1 = ArrayPeak([2, 5, 1, 7, 8, 9, 4, 12, 3, 5, 6, 8, 10, 3])
-print(class1.findAllPeaks())
-print(class1.findFirstPeak())
-print(class1.findMaxPeak())
-print(class1.findMinPeak())
-
-
-
