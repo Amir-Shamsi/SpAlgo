@@ -18,6 +18,15 @@ class MatrixPeak:
         self._row_size = len(matrix)
         self._column_size = len(matrix[0])
 
+    def _findMaxOfColumn(self, column):
+        _max = - float('inf')
+        _row = None
+        for row in range(self._row_size):
+            if _max < self._inner_matrix[row][column]:
+                _max = self._inner_matrix[row][column]
+                _row = row
+        return _max, _row
+
     def findPeak(self) -> dict[str, Union[int, float]]:
         """
         Function will find a peak inside the given matrix.
