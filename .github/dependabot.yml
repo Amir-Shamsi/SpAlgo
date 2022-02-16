@@ -9,6 +9,9 @@ updates:
     directory: "/"
     schedule:
       interval: "daily"
+    commit-message:
+      prefix: "library"
+      include: "pip"
     allow:
       # Allow only direct updates for
       # Pytest and any packages starting "pytest"
