@@ -100,3 +100,70 @@ class MatrixPeak:
             current_element = self._inner_matrix[_current_row][_current_column]
 
         return {'peak': current_element, 'column': _current_column, 'row': _current_row}
+
+    def findAllPeak(self) -> list[dict[str, Union[int, float]]]:
+        _status_matrix = []
+        _col_mat_st = []
+        for column in range(self._column_size):
+            _col_mat_st.append(True)
+        for row in range(self._row_size):
+            _status_matrix.append(_col_mat_st.copy())
+
+        _found_peaks = []
+
+        _current_column = 0
+        _current_row = 0
+        _any_step = False
+
+        while True:
+
+            if _current_row > self._row_size - 1:
+                break
+
+            current_element = self._inner_matrix[_current_row][_current_column]
+            _status = _status_matrix[_current_row][_current_column]
+            _side_status = 0
+            _complete_side_status = 0
+
+            if not _status:
+                _current_column = (_current_column + 1) % self._column_size
+                if _current_column == 0:
+                    _current_row = (_current_row + 1)
+                continue
+
+            if self._is_edge(side='u', row=_current_row):
+                _complete_side_status += 1
+                if current_element >= self._inner_matrix[_current_row - 1][_current_column]:
+                    _side_status += 1
+                    if current_element != self._inner_matrix[_current_row - 1][_current_column]:
+                        _status_matrix[_current_row - 1][_current_column] = False
+
+            if self._is_edge(side='d', row=_current_row):
+                _complete_side_status += 1
+                if current_element >= self._inner_matrix[_current_row + 1][_current_column]:
+                    _side_status += 1
+                    if current_element != self._inner_matrix[_current_row + 1][_current_column]:
+                        _status_matrix[_current_row + 1][_current_column] = False
+
+            if self._is_edge(side='r', column=_current_column):
+                _complete_side_status += 1
+                if current_element >= self._inner_matrix[_current_row][_current_column + 1]:
+                    _side_status += 1
+                    if current_element != self._inner_matrix[_current_row][_current_column + 1]:
+                        _status_matrix[_current_row][_current_column + 1] = False
+
+            if self._is_edge(side='l', column=_current_column):
+                _complete_side_status += 1
+                if current_element >= self._inner_matrix[_current_row][_current_column - 1]:
+                    _side_status += 1
+                    if current_element != self._inner_matrix[_current_row][_current_column - 1]:
+                        _status_matrix[_current_row][_current_column - 1] = False
+
+            if _side_status == _complete_side_status:
+                _found_peaks.append({'peak': current_element, 'column': _current_column, 'row': _current_row})
+
+            _current_column = (_current_column + 1) % self._column_size
+            if _current_column == 0:
+                _current_row = (_current_row + 1)
+
+        return _found_peaks
