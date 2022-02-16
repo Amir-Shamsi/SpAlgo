@@ -5,21 +5,19 @@
 
 version: 2
 updates:
-- package-ecosystem: "pip"
-    directory: "/"
-    schedule:
-      interval: "daily"
-    commit-message:
-      prefix: "library"
-      include: "pip"
-    allow:
-      # Allow only direct updates for
-      # Pytest and any packages starting "pytest"
-      - dependency-name: "pytest*"
-        dependency-type: "direct"
+
+    - package-ecosystem: "pip"
+      directory: "/"
+      schedule:
+        interval: "daily"
+      allow:
+        # Allow only direct updates for
+        # Pytest and any packages starting "pytest"
+        - dependency-name: "pytest*"
+          dependency-type: "direct"
         
-      - dependency-name: "pytest-runner"
-        dependency-type: "direct"
+        - dependency-name: "pytest-runner"
+          dependency-type: "direct"
         
-      - dependency-name: "setuptools"
-        dependency-type: "direct"
+        - dependency-name: "setuptools"
+          dependency-type: "direct"
