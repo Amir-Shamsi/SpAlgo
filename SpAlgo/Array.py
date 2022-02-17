@@ -1,7 +1,7 @@
 from typing import Union
 
 
-class ArrayPeak:
+class Array:
     _inner_array = []
     _size = 0
     _all_peaks = []
