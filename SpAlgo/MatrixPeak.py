@@ -55,8 +55,12 @@ class MatrixPeak:
 
     def findPeak(self) -> dict[str, Union[int, float]]:
         """
-        Function will find a peak inside the given matrix.
-
+        This functions and allows you to find one matrix's peak
+         and will return a dictionary which will have the
+         following items:
+            * peak
+            * row
+            * column
         :return: a dictionary contains these elements->
             * :var peak: contain the peak found inside matrix.
             * :var column: the column of the peak has been found.
@@ -155,6 +159,15 @@ class MatrixPeak:
         return _complete_side_status, _side_status, _forward_step
 
     def findAllPeak(self) -> list[dict[str, Union[int, float]]]:
+        """
+        These functions and allows you to find all matrix's peaks
+         and will return a list of dictionary which will have the
+         following item:
+            * peak
+            * row
+            * column
+        :return: list of every peak as dict
+        """
         _status_matrix = []
         _col_mat_st = []
         for column in range(self._column_size):
