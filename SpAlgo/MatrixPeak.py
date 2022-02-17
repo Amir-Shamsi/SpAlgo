@@ -1,4 +1,12 @@
 from typing import Union
+import operator
+
+OPERATES_FLAGS = [
+    {'side': 'u', 'operator': operator.sub, 'row_val': 1, 'col_val': 0},
+    {'side': 'd', 'operator': operator.add, 'row_val': 1, 'col_val': 0},
+    {'side': 'r', 'operator': operator.add, 'row_val': 0, 'col_val': 1},
+    {'side': 'l', 'operator': operator.sub, 'row_val': 0, 'col_val': 1}
+]
 
 
 class MatrixPeak:
@@ -123,40 +131,58 @@ class MatrixPeak:
 
         return _next_row, _next_column
 
-    def _check_peak_pos(self, _status_matrix, current_element, _current_row, _current_column):
+    def _edge_checker(self, _side, _status_matrix, current_element, _current_row, _current_column, operator_exec,
+                      _sd_flags, _row_val=0, _col_val=0):
+        """
+        :param _side:
+        :param _status_matrix:
+        :param current_element:
+        :param _current_row:
+        :param _current_column:
+        :param operator_exec:
+        :param _sd_flags:
+        :param _row_val:
+        :param _col_val:
+        :return:
+        """
         _complete_side_status = 0
         _side_status = 0
         _forward_step = 1
-        if self._is_edge(side='u', row=_current_row):
-            _complete_side_status += 1
-            if current_element >= self._inner_matrix[_current_row - 1][_current_column]:
-                _side_status += 1
-                if current_element != self._inner_matrix[_current_row - 1][_current_column]:
-                    _status_matrix[_current_row - 1][_current_column] = False
+        if self._is_edge(side=_side, row=_current_row, column=_current_column):
+            _sd_flags['_complete_side_status'] += 1
+            if current_element >= self._inner_matrix[operator_exec(_current_row, _row_val)][
+                    operator_exec(_current_column, _col_val)]:
+                _sd_flags['_side_status'] += 1
+                if current_element != self._inner_matrix[operator_exec(_current_row, _row_val)][
+                        operator_exec(_current_column, _col_val)]:
+                    _status_matrix[operator_exec(_current_row, _row_val)][_current_column] = False
+                    if _side == 'r':
+                        _sd_flags['_forward_step'] = 2
 
-        if self._is_edge(side='d', row=_current_row):
-            _complete_side_status += 1
-            if current_element >= self._inner_matrix[_current_row + 1][_current_column]:
-                _side_status += 1
-                if current_element != self._inner_matrix[_current_row + 1][_current_column]:
-                    _status_matrix[_current_row + 1][_current_column] = False
+    def _check_peak_pos(self, _status_matrix, current_element, _current_row, _current_column):
+        """
+        :param _status_matrix:
+        :param current_element:
+        :param _current_row:
+        :param _current_column:
+        :return:
+        """
+        _sd_flags = {'_complete_side_status': 0, '_side_status': 0, '_forward_step': 1}
 
-        if self._is_edge(side='r', column=_current_column):
-            _complete_side_status += 1
-            if current_element >= self._inner_matrix[_current_row][_current_column + 1]:
-                _side_status += 1
-                if current_element != self._inner_matrix[_current_row][_current_column + 1]:
-                    _status_matrix[_current_row][_current_column + 1] = False
-                    _forward_step = 2
+        for ops_side in OPERATES_FLAGS:
+            self._edge_checker(
+                _side=ops_side['side'],
+                _status_matrix=_status_matrix,
+                current_element=current_element,
+                _current_row=_current_row,
+                _current_column=_current_column,
+                operator_exec=ops_side['operator'],
+                _sd_flags=_sd_flags,
+                _row_val=ops_side['row_val'],
+                _col_val=ops_side['col_val']
+            )
 
-        if self._is_edge(side='l', column=_current_column):
-            _complete_side_status += 1
-            if current_element >= self._inner_matrix[_current_row][_current_column - 1]:
-                _side_status += 1
-                if current_element != self._inner_matrix[_current_row][_current_column - 1]:
-                    _status_matrix[_current_row][_current_column - 1] = False
-
-        return _complete_side_status, _side_status, _forward_step
+        return _sd_flags['_complete_side_status'], _sd_flags['_side_status'], _sd_flags['_forward_step']
 
     def findAllPeak(self) -> list[dict[str, Union[int, float]]]:
         """
@@ -197,7 +223,7 @@ class MatrixPeak:
                 current_element=current_element,
                 _current_row=_current_row,
                 _current_column=_current_column
-                )
+            )
 
             if _side_status == _complete_side_status:
                 _found_peaks.append({'peak': current_element, 'row': _current_row, 'column': _current_column})
