@@ -1,18 +1,17 @@
 from typing import Union
 import operator
 
-OPERATES_FLAGS = [
-    {'side': 'u', 'operator': operator.sub, 'row_val': 1, 'col_val': 0},
-    {'side': 'd', 'operator': operator.add, 'row_val': 1, 'col_val': 0},
-    {'side': 'r', 'operator': operator.add, 'row_val': 0, 'col_val': 1},
-    {'side': 'l', 'operator': operator.sub, 'row_val': 0, 'col_val': 1}
-]
-
 
 class MatrixPeak:
     _inner_matrix = None
     _column_size = None
     _row_size = None
+    _OPERATES_FLAGS = [
+        {'side': 'u', 'operator': operator.sub, 'row_val': 1, 'col_val': 0},
+        {'side': 'd', 'operator': operator.add, 'row_val': 1, 'col_val': 0},
+        {'side': 'r', 'operator': operator.add, 'row_val': 0, 'col_val': 1},
+        {'side': 'l', 'operator': operator.sub, 'row_val': 0, 'col_val': 1}
+    ]
 
     def __init__(self, matrix: list[list[Union[int, float]]]):
         """
