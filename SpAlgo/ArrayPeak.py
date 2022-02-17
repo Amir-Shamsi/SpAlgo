@@ -72,10 +72,16 @@ class ArrayPeak:
         return first_peak, self._inner_array.index(first_peak) 
 
     def findMaxPeak(self) -> tuple[int, int]:
+        """
+        :return the FIRST maximum peak
+        """
         max_peak = max(self._all_peaks)[0]
         return max_peak, self._inner_array.index(max_peak) 
 
     def findMinPeak(self) -> tuple[int, int]:
+        """
+        :return the FIRST minimum peak
+        """
         min_peak = min(self._all_peaks)[0]
         return min_peak, self._inner_array.index(min_peak)
 
@@ -83,5 +89,4 @@ class ArrayPeak:
     
         
     
-
 
