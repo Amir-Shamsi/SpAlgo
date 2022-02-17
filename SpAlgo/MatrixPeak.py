@@ -168,7 +168,7 @@ class MatrixPeak:
         """
         _sd_flags = {'_complete_side_status': 0, '_side_status': 0, '_forward_step': 1}
 
-        for ops_side in OPERATES_FLAGS:
+        for ops_side in self._OPERATES_FLAGS:
             self._edge_checker(
                 _side=ops_side['side'],
                 _status_matrix=_status_matrix,
