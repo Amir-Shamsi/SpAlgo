@@ -101,6 +101,24 @@ class MatrixPeak:
 
         return {'peak': current_element, 'column': _current_column, 'row': _current_row}
 
+    def _matrix_next_step(self, row, column, step=1):
+        """
+        this function help to go through the matrix cells.
+
+        :param row: current row
+        :param column: current column
+        :param step: step forward
+        :return: next row and next column
+        """
+        _next_row = None
+        _next_column = None
+        for _s_f in range(step):
+            _next_column = (column + 1) % self._column_size
+            if _next_column == 0:
+                _next_row = (row + 1)
+
+        return _next_row, _next_column
+
     def findAllPeak(self) -> list[dict[str, Union[int, float]]]:
         _status_matrix = []
         _col_mat_st = []
@@ -124,11 +142,10 @@ class MatrixPeak:
             _status = _status_matrix[_current_row][_current_column]
             _side_status = 0
             _complete_side_status = 0
+            _forward_step = 1
 
             if not _status:
-                _current_column = (_current_column + 1) % self._column_size
-                if _current_column == 0:
-                    _current_row = (_current_row + 1)
+                _current_row, _current_column = self._matrix_next_step(_current_row, _current_column)
                 continue
 
             if self._is_edge(side='u', row=_current_row):
@@ -151,6 +168,7 @@ class MatrixPeak:
                     _side_status += 1
                     if current_element != self._inner_matrix[_current_row][_current_column + 1]:
                         _status_matrix[_current_row][_current_column + 1] = False
+                        _forward_step = 2
 
             if self._is_edge(side='l', column=_current_column):
                 _complete_side_status += 1
@@ -162,8 +180,6 @@ class MatrixPeak:
             if _side_status == _complete_side_status:
                 _found_peaks.append({'peak': current_element, 'column': _current_column, 'row': _current_row})
 
-            _current_column = (_current_column + 1) % self._column_size
-            if _current_column == 0:
-                _current_row = (_current_row + 1)
+            _current_row, _current_column = self._matrix_next_step(_current_row, _current_column, _forward_step)
 
         return _found_peaks
