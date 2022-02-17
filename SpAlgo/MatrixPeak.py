@@ -34,23 +34,23 @@ class MatrixPeak:
         :param side: is one of ['u', 'd', 'l', 'r']
         :return: boolean
         """
-        match side:
-            case 'u':  # up
-                if row - 1 < 0:
-                    return False
-                return True
-            case 'd':  # down
-                if row + 1 > self._row_size - 1:
-                    return False
-                return True
-            case 'l':  # left
-                if column - 1 < 0:
-                    return False
-                return True
-            case 'r':  # right
-                if column + 1 > self._column_size - 1:
-                    return False
-                return True
+
+        if side == 'u':  # up
+            if row - 1 < 0:
+                return False
+            return True
+        elif side == 'd':  # down
+            if row + 1 > self._row_size - 1:
+                return False
+            return True
+        elif side == 'l':  # left
+            if column - 1 < 0:
+                return False
+            return True
+        elif side == 'r':  # right
+            if column + 1 > self._column_size - 1:
+                return False
+            return True
         return False
 
     def findPeak(self) -> dict[str, Union[int, float]]:
