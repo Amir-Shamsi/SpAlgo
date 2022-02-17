@@ -2,7 +2,7 @@ from typing import Union
 import operator
 
 
-class MatrixPeak:
+class Matrix:
     _inner_matrix = None
     _column_size = None
     _row_size = None
