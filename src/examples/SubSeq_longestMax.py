@@ -16,7 +16,7 @@ data_sequence = [-1, 3, -2.2, 5, 2, 12.1, -23, 4, 8, 6.5, 4, -10, 12, -1, 15]
 
 
 """ 
-    passing it into the "longestMax()" function inside "SubSeq"
+    passing it into the "longestMax()" class inside "SubSeq.py"
     and storing the result into the variable `result`
 """
 longestMax = SubSeq.LongestMax(data_sequence)
