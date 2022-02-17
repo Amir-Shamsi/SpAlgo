@@ -11,7 +11,7 @@ class Array:
     def __init__(self, array: list[Union[int, float]]):
         self._inner_array = array
         self._size = len(self._inner_array)
-        self._all_peaks = ArrayPeak.findAllPeaks(self)
+        self._all_peaks = Array.findAllPeaks(self)
 
     def findPeak(self) -> tuple[Union[int, float], int]:
         """
@@ -42,7 +42,6 @@ class Array:
             else:
                 break
         return current_element, pointer
-
 
     def findAllPeaks(self) -> list[tuple[Union[int, float]], int]:
         """
