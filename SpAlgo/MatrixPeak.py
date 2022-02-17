@@ -110,8 +110,8 @@ class MatrixPeak:
         :param step: step forward
         :return: next row and next column
         """
-        _next_row = None
-        _next_column = None
+        _next_row = row
+        _next_column = column
         for _s_f in range(step):
             _next_column = (column + 1) % self._column_size
             if _next_column == 0:
