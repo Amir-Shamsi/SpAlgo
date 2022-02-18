@@ -1,4 +1,4 @@
-from SpAlgo.Array import Array
+from SpAlgo import Array
 
 # find a peak inside a list of numbers.
 

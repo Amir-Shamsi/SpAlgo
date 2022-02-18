@@ -1,4 +1,4 @@
-from SpAlgo.Array import Array
+from SpAlgo import Array
 
 # find min peak inside a list of numbers.
 

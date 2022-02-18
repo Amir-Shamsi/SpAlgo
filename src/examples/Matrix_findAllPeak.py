@@ -24,7 +24,7 @@ input_matrix = [[2, 4, 1, 7, 8],
     result in `matrix` variable
 '''
 
-matrixPeak = Matrix.Matrix(input_matrix)
+matrixPeak = Matrix(input_matrix)
 
 # get all peaks from matrixPeak
 allPeaks = matrixPeak.findAllPeak()
