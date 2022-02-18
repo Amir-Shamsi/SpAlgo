@@ -45,7 +45,7 @@ SpAlgo was programmed with ease-of-use in mind. First, import Matrix, Array and 
 for more exact usage documents you can see the example files [here](src/examples)
 
 ```Python
-from SpAlgo import Matrix, Array, Subsequence
+from SpAlgo import Matrix, Array, LongestMax
 ```
 
 then you can them bassed on what you need.
