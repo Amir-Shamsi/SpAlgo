@@ -19,12 +19,14 @@ setup(
         'math',
         'operator'
     ],
+    download_url='https://github.com/Amir-Shamsi/SpAlgo/archive/refs/tags/0.1.0.tar.gz',
+    
     keywords=['SpAlgo', 'Algorithm', 'Matrix', 'Array'],
     setup_requires=['pytest-runner'],
     tests_require=['pytest'],
     test_suite='tests',
     classifiers=[
-        'Development Status :: 3 - Alpha',
+        'Development Status :: 1 - Alpha',
         'Intended Audience :: Developers',
         'Topic :: Software Development :: Build Tools',
         'License :: OSI Approved :: MIT License',
