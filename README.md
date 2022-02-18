@@ -72,7 +72,7 @@ subsequence()
 ```
 
 ## Support 
-Supported version of pythons are as follow:
+Supported versions of python for this library are as follow:
 * [Python v3](https://www.python.org/downloads/release/python-300/)
 * [Python v3.4](https://www.python.org/downloads/release/python-340/)
 * [Python v3.5](https://www.python.org/downloads/release/python-350/)
