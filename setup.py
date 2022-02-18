@@ -20,7 +20,7 @@ setup(
         'operator'
     ],
     download_url='https://github.com/Amir-Shamsi/SpAlgo/archive/refs/tags/0.1.0.tar.gz',
-    
+
     keywords=['SpAlgo', 'Algorithm', 'Matrix', 'Array'],
     setup_requires=['pytest-runner'],
     tests_require=['pytest'],
@@ -38,7 +38,5 @@ setup(
         'Programming Language :: Python :: 3.8',
         'Programming Language :: Python :: 3.9',
         'Programming Language :: Python :: 3.10',
-        'Programming Language :: Python :: 3.10.1',
-        'Programming Language :: Python :: 3.10.2',
     ],
 )
