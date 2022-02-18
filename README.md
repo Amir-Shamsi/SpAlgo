@@ -71,6 +71,17 @@ maximmum_sum()
 subsequence()
 ```
 
+## Support 
+Supported version of pythons are as follow:
+* [Python v3](https://www.python.org/downloads/release/python-300/)
+* [Python v3.4](https://www.python.org/downloads/release/python-340/)
+* [Python v3.5](https://www.python.org/downloads/release/python-350/)
+* [Python v3.6](https://www.python.org/downloads/release/python-360/)
+* [Python v3.7](https://www.python.org/downloads/release/python-370/)
+* [Python v3.8](https://www.python.org/downloads/release/python-380/)
+* [Python v3.9](https://www.python.org/downloads/release/python-390/)
+* [Python v3.10](https://www.python.org/downloads/release/python-3100/)
+
 ## License
 Read license 
 [here](LICENSE):
