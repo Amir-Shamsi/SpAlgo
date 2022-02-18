@@ -9,7 +9,7 @@
 
 [![Python version](https://img.shields.io/badge/python-%5E3.*-purple?style=flat-square)](https://www.python.org/)
 [![BSD Licence](https://img.shields.io/badge/licence-MIT-geen?style=flat-square)](LICENSE)
-<a href="https://github.com/Amir-Shamsi/cpu-scheduling-algorithm" title="Repo Size">
+<a href="https://github.com/Amir-Shamsi/SpAlgo" title="Repo Size">
 <img src="https://img.shields.io/github/repo-size/Amir-Shamsi/SpAlgo?label=Repo%20Size&logo=Github&style=flat-square" alt="Project Initiator Repo Size"/>
 </a>
 
@@ -70,6 +70,17 @@ for `subsequence` the current available methods are:
 maximmum_sum()
 subsequence()
 ```
+
+## Support 
+Supported versions of python for this library are as follow:
+* [Python v3](https://www.python.org/downloads/release/python-300/)
+* [Python v3.4](https://www.python.org/downloads/release/python-340/)
+* [Python v3.5](https://www.python.org/downloads/release/python-350/)
+* [Python v3.6](https://www.python.org/downloads/release/python-360/)
+* [Python v3.7](https://www.python.org/downloads/release/python-370/)
+* [Python v3.8](https://www.python.org/downloads/release/python-380/)
+* [Python v3.9](https://www.python.org/downloads/release/python-390/)
+* [Python v3.10](https://www.python.org/downloads/release/python-3100/)
 
 ## License
 Read license 
