@@ -1,8 +1,12 @@
 """
 The python source code.
 """
-from SpAlgo import SubSeq
+from SpAlgo import _SubSeq
 
-__version__ = "0.1.0"
-__all__ = ['SubSeq', 'Matrix', 'Array']
+from SpAlgo._Array import Array
+from SpAlgo._Matrix import Matrix
+from SpAlgo._SubSeq import LongestMax
+
+__version__ = "0.1.1"
+__all__ = ['Matrix', 'LongestMax', 'Array']
 
