@@ -1,4 +1,4 @@
-from SpAlgo.Matrix import Matrix
+from SpAlgo import Matrix
 
 
 def test_Matrix_findPeak():
