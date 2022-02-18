@@ -9,12 +9,11 @@
 
 [![Python version](https://img.shields.io/badge/python-%5E3.*-purple?style=flat-square)](https://www.python.org/)
 [![BSD Licence](https://img.shields.io/badge/licence-MIT-geen?style=flat-square)](LICENSE)
-[![Follow me](https://img.shields.io/github/followers/amir-shamsi?label=follow%20me&style=flat-square)](https://github.com/amir-shamsi)
 <a href="https://github.com/Amir-Shamsi/cpu-scheduling-algorithm" title="Repo Size">
 <img src="https://img.shields.io/github/repo-size/Amir-Shamsi/SpAlgo?label=Repo%20Size&logo=Github&style=flat-square" alt="Project Initiator Repo Size"/>
 </a>
 
-[![ForTheBadge built-with-love](http://ForTheBadge.com/images/badges/built-with-love.svg)](https://github.com/Amir-Shamsi)
+[![ForTheBadge built-with-love](http://ForTheBadge.com/images/badges/built-with-love.svg)](Collaborators.md)
 
 SpAlgo is a python library with special algorithms which can help you in your education or any other purpose.
 
