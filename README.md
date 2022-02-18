@@ -30,6 +30,45 @@ life is so short so you don't need to spend your time implementing these algorit
 
 ## Usage
 
+In the following paragraphs, I am going to describe how you can get and use Scrapeasy for your own projects.
+
+###  Getting it
+
+To download SpAlgo, either fork this github repo or simply use Pypi via pip.
+```sh
+$ pip install SpAlgo
+```
+
+### Using it
+
+SpAlgo was programmed with ease-of-use in mind. First, import Matrix, Array and Subsequence from SpAlgo
+
+```Python
+from SpAlgo import Matrix, Array, Subsequence
+```
+
+then you can them bassed on what you need.
+
+for `array` the current available methods are:
+```python
+findPeak()
+findAllPeak()
+findFisrtPeak()
+findMaxPeak()
+findMaxPeak()
+```
+
+for `matrix` the current available methods are:
+```python
+findPeak()
+findAllPeak()
+```
+
+for `subsequence` the current available methods are:
+```python
+maximmum_sum()
+subsequence()
+```
 
 ## License
 Read license 
