@@ -2,7 +2,7 @@
 
 <p align='center'>
     <a href="#">
-        <img src="spalgo.png"  alt="spalgo" />
+        <img src="https://github.com/Amir-Shamsi/SpAlgo/blob/master/spalgo.png"  alt="spalgo" />
     </a>
 </p>
 
@@ -14,7 +14,7 @@
 </a>
 [![Downloads](https://static.pepy.tech/personalized-badge/spalgo?period=total&units=international_system&left_color=grey&right_color=red&style=flat-square&left_text=Downloads)](https://pepy.tech/project/spalgo)
 
-[![ForTheBadge built-with-love](http://ForTheBadge.com/images/badges/built-with-love.svg)](CONTRIBUTING.md)
+[![ForTheBadge built-with-love](http://ForTheBadge.com/images/badges/built-with-love.svg)](https://github.com/Amir-Shamsi/SpAlgo/blob/master/CONTRIBUTING.md)
 
 SpAlgo is a python library with special algorithms which can help you in your education or any other purpose.
 
@@ -43,7 +43,7 @@ $ pip install SpAlgo
 
 SpAlgo was programmed with ease-of-use in mind. First, import Matrix, Array and Subsequence from SpAlgo
 
-for more exact usage documents you can see the example files [here](src/examples)
+for more exact usage documents you can see the example files [here](https://github.com/Amir-Shamsi/SpAlgo/blob/master/src/examples)
 
 ```Python
 from SpAlgo import Matrix, Array, LongestMax
@@ -85,7 +85,7 @@ Supported versions of python for this library are as follow:
 
 ## License
 Read license 
-[here](LICENSE):
+[here](https://github.com/Amir-Shamsi/SpAlgo/blob/master/LICENSE):
 ```
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
