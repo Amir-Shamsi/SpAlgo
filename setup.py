@@ -8,7 +8,7 @@ setup(
     name='SpAlgo',
     packages=find_packages(include=['SpAlgo']),
 
-    version='0.1.2',
+    version='0.1.3',
     description='SpAlgo is a python library with special algorithms which will helps you in your education and your tasks.',
     author='Mohammad Keshavarzi & Amir Shamsi',
     url='https://github.com/Amir-Shamsi/SpAlgo',
@@ -19,10 +19,7 @@ setup(
     github='https://github.com/mohammadkeshavarzi/SpAlgo & https://github.com/Amir-Shamsi',
     linkedin='https://linkedin.com/in/amir-shamsi & https://linkedin.com/in/mohammad-keshavarzi-1b1671218',
 
-    install_requires=[
-        'math',
-        'operator'
-    ],
+    install_requires=[],
     download_url='https://github.com/Amir-Shamsi/SpAlgo/archive/refs/tags/0.1.2.tar.gz',
 
     keywords=['SpAlgo', 'Algorithm', 'Matrix', 'Array'],
