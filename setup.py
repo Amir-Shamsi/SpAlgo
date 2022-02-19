@@ -4,7 +4,7 @@ setup(
     name='SpAlgo',
     packages=find_packages(include=['SpAlgo']),
 
-    version='0.1.0',
+    version='0.1.1',
     description='SpAlgo is a python library with special algorithms which will helps you in your education and your tasks.',
     author='Mohammad Keshavarzi & Amir Shamsi',
     url='https://github.com/Amir-Shamsi/SpAlgo',
@@ -39,4 +39,5 @@ setup(
         'Programming Language :: Python :: 3.9',
         'Programming Language :: Python :: 3.10',
     ],
+    long_description=open('README.md', 'r').read()
 )

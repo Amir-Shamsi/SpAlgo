@@ -1,0 +1,9 @@
+from typing import Union, overload
+
+class Matrix:
+    @overload
+    def __init__(self, matrix: list[list[Union[int, float]]]) -> None: ...
+    @overload
+    def findPeak(self) -> dict[str, Union[int, float]]: ...
+    @overload
+    def findAllPeak(self) -> list[dict[str, Union[int, float]]]: ...
