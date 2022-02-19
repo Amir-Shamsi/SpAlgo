@@ -7,7 +7,7 @@ setup(
     version='0.1.1',
     description='SpAlgo is a python library with special algorithms which will helps you in your education and your tasks.',
     author='Mohammad Keshavarzi & Amir Shamsi',
-    url='https://github.com/Amir-Shamsi/SpAlgo & https://github.com/mohammadkeshavarzi/SpAlgo',
+    url='https://github.com/Amir-Shamsi/SpAlgo',
 
     license='MIT',
     author_email='amirshamsi.github@gmail.com',

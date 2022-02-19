@@ -12,8 +12,9 @@
 <a href="https://github.com/Amir-Shamsi/SpAlgo" title="Repo Size">
 <img src="https://img.shields.io/github/repo-size/Amir-Shamsi/SpAlgo?label=Repo%20Size&logo=Github&style=flat-square" alt="Project Initiator Repo Size"/>
 </a>
+[![Downloads](https://static.pepy.tech/personalized-badge/spalgo?period=total&units=international_system&left_color=grey&right_color=red&style=flat-square&left_text=Downloads)](https://pepy.tech/project/spalgo)
 
-[![ForTheBadge built-with-love](http://ForTheBadge.com/images/badges/built-with-love.svg)](Collaborators.md)
+[![ForTheBadge built-with-love](http://ForTheBadge.com/images/badges/built-with-love.svg)](CONTRIBUTING.md)
 
 SpAlgo is a python library with special algorithms which can help you in your education or any other purpose.
 
