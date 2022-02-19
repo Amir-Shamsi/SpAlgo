@@ -1,4 +1,9 @@
+from pathlib import Path
+
 from setuptools import find_packages, setup
+
+this_directory = Path(__file__).parent
+long_description = (this_directory / "docs/description.rst").read_text()
 
 setup(
     name='SpAlgo',
@@ -39,5 +44,5 @@ setup(
         'Programming Language :: Python :: 3.9',
         'Programming Language :: Python :: 3.10',
     ],
-    long_description=open('README.md', 'r').read()
+    long_description=long_description
 )
