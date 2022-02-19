@@ -2,6 +2,8 @@
 SpAlgo
 #######
 
+.. image:: https://github.com/Amir-Shamsi/SpAlgo/blob/master/spalgo.png
+
 SpAlgo is a python library with special algorithms which can help you in your education or any other purpose.
 
 *********
