@@ -2,7 +2,7 @@
 
 <p align='center'>
     <a href="#">
-        <img src="https://github.com/Amir-Shamsi/SpAlgo/blob/master/spalgo.png"  alt="spalgo" />
+        <img src="https://raw.githubusercontent.com/Amir-Shamsi/SpAlgo/master/spalgo.png"  alt="spalgo" />
     </a>
 </p>
 
