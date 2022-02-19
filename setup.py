@@ -23,7 +23,7 @@ setup(
         'math',
         'operator'
     ],
-    download_url='https://github.com/Amir-Shamsi/SpAlgo/archive/refs/tags/0.1.0.tar.gz',
+    download_url='https://github.com/Amir-Shamsi/SpAlgo/archive/refs/tags/0.1.2.tar.gz',
 
     keywords=['SpAlgo', 'Algorithm', 'Matrix', 'Array'],
     setup_requires=['pytest-runner'],
