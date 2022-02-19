@@ -36,7 +36,7 @@ In the following paragraphs, I am going to describe how you can get and use Scra
 
 To download SpAlgo, either fork this github repo or simply use Pypi via pip.
 ```sh
-$ pip install SpAlgo
+$ pip install SpAlgo==0.1.2
 ```
 
 ### Using it
