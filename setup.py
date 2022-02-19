@@ -39,4 +39,5 @@ setup(
         'Programming Language :: Python :: 3.9',
         'Programming Language :: Python :: 3.10',
     ],
+    long_description=open('README.md', 'r').read()
 )
