@@ -12,7 +12,7 @@
 <a href="https://github.com/Amir-Shamsi/SpAlgo" title="Repo Size">
 <img src="https://img.shields.io/github/repo-size/Amir-Shamsi/SpAlgo?label=Repo%20Size&logo=Github&style=flat-square" alt="Project Initiator Repo Size"/>
 </a>
-[![Downloads](https://static.pepy.tech/personalized-badge/spalgo?period=total&units=international_system&left_color=grey&right_color=MediumVioletRed&style=flat-square&left_text=Downloads)](https://pepy.tech/project/spalgo)
+[![Downloads](https://static.pepy.tech/personalized-badge/spalgo?period=total&units=international_system&left_color=black&right_color=MediumVioletRed&left_text=Downloads)](https://pepy.tech/project/spalgo)
 [![PyPI version shields.io](https://img.shields.io/pypi/v/SpAlgo.svg?style=flat-square)](https://pypi.python.org/pypi/SpAlgo/)
 ![GitHub Workflow Status](https://img.shields.io/github/workflow/status/amir-shamsi/spalgo/CodeQL?style=flat-square)
 
