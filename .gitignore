@@ -4,7 +4,7 @@ __pycache__/
 *$py.class
 
 # general test file
-general-test-file.py
+dev-test-dir
 
 # C extensions
 *.so
