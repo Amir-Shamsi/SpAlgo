@@ -1,3 +1,5 @@
+from typing import Union
+import _sp_sort
 
 
 class Pack:
@@ -29,4 +31,28 @@ class Knapsack:
         self._weight = weight
         self._capacity = capacity
         self._is_crumbly = is_crumbly
+
+    def _picker_(self):
+        _val_pack = []
+        for i in range(len(self._weight)):
+            _val_pack.append(Pack(self._weight[i], self._value[i], i))
+
+        _sp_sort._sort_(_val_pack, 0, len(_val_pack) - 1)
+        _val_pack.reverse()
+
+        totalValue = 0
+        for i in _val_pack:
+            curWt = int(i.wt)
+            curVal = int(i.val)
+            if self._capacity - curWt >= 0:
+                self._capacity -= curWt
+                totalValue += curVal
+                print(curVal)
+            else:
+                if self._is_crumbly:
+                    fraction = self._capacity / curWt
+                    totalValue += curVal * fraction
+                    self._capacity = int(self._capacity - (curWt * fraction))
+                break
+        return totalValue
 
