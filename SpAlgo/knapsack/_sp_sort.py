@@ -1,7 +1,7 @@
-from SpAlgo.knapsack._knapsack import Pack
+from . import _pack
 
 
-def _partition_(_items: list[Pack], low, high):
+def _partition_(_items: list[_pack.Pack], low, high):
     i = low - 1
     pivot = _items[high]
     for j in range(low, high):
