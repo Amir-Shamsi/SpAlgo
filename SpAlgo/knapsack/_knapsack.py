@@ -21,6 +21,7 @@ class Knapsack:
     _cur_cap = None
     _cur_val = None
     _is_crumbly = None
+    _total_value = None
 
     def __init__(self,
                  capacity: Union[int, float],
@@ -40,19 +41,18 @@ class Knapsack:
         _sp_sort._sort_(_val_pack, 0, len(_val_pack) - 1)
         _val_pack.reverse()
 
-        totalValue = 0
+        self._total_value = 0
         for i in _val_pack:
             curWt = int(i.wt)
             curVal = int(i.val)
             if self._capacity - curWt >= 0:
                 self._capacity -= curWt
-                totalValue += curVal
+                self._total_value += curVal
                 print(curVal)
             else:
                 if self._is_crumbly:
                     fraction = self._capacity / curWt
-                    totalValue += curVal * fraction
+                    self._total_value += curVal * fraction
                     self._capacity = int(self._capacity - (curWt * fraction))
                 break
-        return totalValue
 
