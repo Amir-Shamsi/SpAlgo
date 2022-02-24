@@ -11,3 +11,22 @@ class Pack:
         return self.cost < other.cost
 
 
+class Knapsack:
+    _weight = None
+    _value = None
+    _capacity = None
+    _pack = None
+    _cur_cap = None
+    _cur_val = None
+    _is_crumbly = None
+
+    def __init__(self,
+                 capacity: Union[int, float],
+                 weight: list[Union[int, float]],
+                 value: list[Union[int, float]],
+                 is_crumbly: bool = False):
+        self._value = value
+        self._weight = weight
+        self._capacity = capacity
+        self._is_crumbly = is_crumbly
+
