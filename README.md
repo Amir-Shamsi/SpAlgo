@@ -26,6 +26,7 @@ By now, this library contains some algorithms for the following items and other 
   - Subsequence
   - Array
   - Matrix
+  - Knapsack
 
 life is so short so you don't need to spend your time implementing these algorithms so we recommend you use SpAlgo if you want to have a faster experience.
 
@@ -48,7 +49,7 @@ SpAlgo was programmed with ease-of-use in mind. First, import Matrix, Array and 
 for more exact usage documents you can see the example files [here](https://github.com/Amir-Shamsi/SpAlgo/blob/master/src/examples)
 
 ```Python
-from SpAlgo import Matrix, Array, LongestMax
+from SpAlgo import Matrix, Array, LongestMax, Knapsack
 ```
 
 then you can them bassed on what you need.
@@ -72,6 +73,15 @@ for `subsequence` the current available methods are:
 ```python
 maximmum_sum()
 subsequence()
+```
+
+for `knapsack` the current available methods are:
+```python
+getPack()
+getTotalValue()
+getUsedWeight()
+getWastedWeight()
+getCrumbledItem()
 ```
 
 ## Support 
