@@ -2,10 +2,10 @@ from ._pack import Pack as Pack
 from typing import Union
 
 class Knapsack:
-    def __init__(self, capacity: Union[int, float], weight: list[Union[int, float]], value: list[Union[int, float]], is_crumbly: bool = ..., ultimate_item: bool = ...) -> None: 
+    def __init__(self, capacity: Union[int, float], weight: list[Union[int, float]], value: list[Union[int, float]], is_crumbly: bool = ..., infinite_item: bool = ...) -> None:
         self._value = None
         self._weight = None
-        self._ultimate_item = None
+        self._infinite_item = None
         self._is_crumbly = None
         self._crumbled_item = None
         self._capacity = None

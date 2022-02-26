@@ -25,23 +25,23 @@ class Knapsack:
     _is_crumbly = None
     _total_value = None
     _crumbled_item = None
-    _ultimate_item = None
+    _infinite_item = None
 
     def __init__(self,
                  capacity: Union[int, float],
                  weight: list[Union[int, float]],
                  value: list[Union[int, float]],
                  is_crumbly: bool = False,
-                 ultimate_item: bool = False):
+                 infinite_item: bool = False):
         """
         Initial class fields
         :param capacity: the capacity of the knapsack.
         :param weight: the array of item weights.
         :param value: the array of item values.
         :param is_crumbly: if items are crumbly so make it True. [default is False]
-        :param ultimate_item: if there is ultimate count of items make it True. [default is False]
+        :param infinite_item: if there is infinite count of items make it True. [default is False]
         """
-        self._ultimate_item = ultimate_item
+        self._infinite_item = infinite_item
         self._value = value
         self._weight = weight
         self._capacity = capacity
@@ -101,7 +101,7 @@ class Knapsack:
 
         self._total_value = 0
 
-        if not self._ultimate_item:
+        if not self._infinite_item:
             for item in _val_pack:
                 _cur_wt = int(item.wt)
                 _cur_val = int(item.val)
