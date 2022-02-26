@@ -1,6 +1,6 @@
 from typing import Union
 
-class LongestMax:
+class MaxSubseq:
     _sequence = None
     _maximum_summation = None
     start_index = -1
