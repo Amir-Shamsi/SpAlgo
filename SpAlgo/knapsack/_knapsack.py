@@ -3,6 +3,17 @@ from . import _qsort
 from ._pack import Pack
 
 class Knapsack:
+    """
+    The Knapsack Problem is a famous Dynamic Programming Problem that falls
+     in the optimization category.
+
+    It derives its name from a scenario where, given a set of items with
+    specific weights and assigned values, the goal is to maximize the value
+    in a knapsack while remaining within the weight constraint.
+
+    Each item can only be selected once, as we don’t have multiple quantities
+     of any item.
+    """
     _weight = None
     _value = None
     _capacity = None
@@ -21,6 +32,14 @@ class Knapsack:
                  value: list[Union[int, float]],
                  is_crumbly: bool = False,
                  ultimate_item: bool = False):
+        """
+        Initial class fields
+        :param capacity: the capacity of the knapsack.
+        :param weight: the array of item weights.
+        :param value: the array of item values.
+        :param is_crumbly: if items are crumbly so make it True. [default is False]
+        :param ultimate_item: if there is ultimate count of items make it True. [default is False]
+        """
         self._ultimate_item = ultimate_item
         self._value = value
         self._weight = weight
@@ -30,7 +49,47 @@ class Knapsack:
 
         self._picker_()
 
+    def getPack(self):
+        """
+        :return: items of knapsack
+        """
+        return self._pack
+
+    def getTotalValue(self):
+        """
+        :return: knapsack total value
+        """
+        return self._total_value
+
+    def getUsedWeight(self):
+        """
+        :return: used weight of the knapsack
+        """
+        return self._st_capacity - self._capacity
+
+    def getWastedWeight(self):
+        """
+        :return: Wasted weight of the knapsack
+        """
+        return self._capacity
+
+    def getCrumbledItem(self):
+        """
+        :return: the item which is crumbled
+        the formate is:
+             {
+                'weight': ---,
+                'value': ---,
+                'original_weight': ---,
+                'original_value': ---
+            }
+        """
+        return self._crumbled_item
+
     def _picker_(self):
+        """
+        this will execute the knapsack problem
+        """
         _val_pack = []
         self._pack = []
         for item in range(len(self._weight)):
@@ -73,18 +132,3 @@ class Knapsack:
 
                 if _inner_index == len(_val_pack):
                     break
-
-    def getPack(self):
-        return self._pack
-
-    def getTotalValue(self):
-        return self._total_value
-
-    def getUsedWeight(self):
-        return self._st_capacity - self._capacity
-
-    def getWastedWeight(self):
-        return self._capacity
-
-    def getCrumbledItem(self):
-        return self._crumbled_item
