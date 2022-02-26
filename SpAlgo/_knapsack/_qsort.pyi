@@ -1,4 +1,4 @@
-from SpAlgo.knapsack import _pack
+from SpAlgo._knapsack import _pack
 
 
 def _sort_(_items: list[_pack.Pack], low: int, high: int)-> list[_pack.Pack]: ...

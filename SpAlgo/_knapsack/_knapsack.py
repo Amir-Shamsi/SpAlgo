@@ -2,6 +2,7 @@ from typing import Union
 from . import _qsort
 from ._pack import Pack
 
+
 class Knapsack:
     """
     The Knapsack Problem is a famous Dynamic Programming Problem that falls
@@ -105,30 +106,45 @@ class Knapsack:
                 _cur_wt = int(item.wt)
                 _cur_val = int(item.val)
                 if self._capacity - _cur_wt >= 0:
-                    self._capacity -= _cur_wt
-                    self._total_value += _cur_val
-                    self._pack.append({'weight': _cur_wt, 'value': _cur_val})
+                    self._itm_pack_(_cur_wt, _cur_val)
                 else:
-                    if self._is_crumbly:
-                        fraction = self._capacity / _cur_wt
-                        self._total_value += _cur_val * fraction
-                        self._capacity = int(self._capacity - (_cur_wt * fraction))
-                        self._pack.append({'weight': _cur_wt * fraction, 'value': _cur_val * fraction})
-                        self._crumbled_item = {'weight': _cur_wt * fraction, 'value': _cur_val * fraction,
-                                               'original_weight': _cur_wt, 'original_value': _cur_val}
+                    self._add_crumble_(_cur_wt, _cur_val)
                     break
         else:
             _inner_index = 0
             while True:
                 _cur_wt = _val_pack[_inner_index].wt
                 _cur_val = _val_pack[_inner_index].val
-                if _val_pack[_inner_index].wt <= self._capacity:
-                    self._capacity -= _cur_wt
-                    self._total_value += _cur_val
-                    self._pack.append({'weight': _cur_wt, 'value': _cur_val})
 
-                if _cur_wt > self._capacity:
+                if _val_pack[_inner_index].wt <= self._capacity:
+                    self._itm_pack_(_cur_wt, _cur_val)
+
+                if _cur_wt > self._capacity and not self._is_crumbly:
                     _inner_index += 1
+                elif _cur_wt > self._capacity and self._is_crumbly:
+                    self._add_crumble_(_cur_wt, _cur_val)
+                    break
 
                 if _inner_index == len(_val_pack):
+                    self._add_crumble_(_cur_wt, _cur_val)
                     break
+
+    def _add_crumble_(self, _cur_wt, _cur_val):
+        """
+        add crumbled item
+        :param _cur_wt:
+        :param _cur_val:
+        :return:
+        """
+        if self._is_crumbly:
+            fraction = self._capacity / _cur_wt
+            self._total_value += _cur_val * fraction
+            self._capacity = int(self._capacity - (_cur_wt * fraction))
+            self._pack.append({'weight': _cur_wt * fraction, 'value': _cur_val * fraction})
+            self._crumbled_item = {'weight': _cur_wt * fraction, 'value': _cur_val * fraction,
+                                   'original_weight': _cur_wt, 'original_value': _cur_val}
+
+    def _itm_pack_(self, _cur_wt, _cur_val):
+        self._capacity -= _cur_wt
+        self._total_value += _cur_val
+        self._pack.append({'weight': _cur_wt, 'value': _cur_val})
