@@ -1,6 +1,6 @@
 from typing import Any, Union
 
-class LongestMax:
+class MaxSubseq:
     start_index: int
     end_index: int
     sequence: Any
