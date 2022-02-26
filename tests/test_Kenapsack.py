@@ -34,7 +34,7 @@ def test_Knapsack():
     _val2 = [30, 25, 2, 6, 0.5]
     _cap2 = 48
 
-    _ks2 = Knapsack(_cap2, _wt2, _val2, ultimate_item=True)
+    _ks2 = Knapsack(_cap2, _wt2, _val2, infinite_item=True)
     assert _ks2.getPack() == [{'weight': 10, 'value': 25},
                               {'weight': 10, 'value': 25},
                               {'weight': 10, 'value': 25},
@@ -49,7 +49,7 @@ def test_Knapsack():
     _val3 = [30, 25, 2, 6, 0.5]
     _cap3 = 48
 
-    _ks3 = Knapsack(_cap3, _wt3, _val3, is_crumbly=True, ultimate_item=True)
+    _ks3 = Knapsack(_cap3, _wt3, _val3, is_crumbly=True, infinite_item=True)
     assert _ks3.getPack() == [{'weight': 10, 'value': 25},
                               {'weight': 10, 'value': 25},
                               {'weight': 10, 'value': 25},
