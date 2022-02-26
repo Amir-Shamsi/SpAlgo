@@ -23,7 +23,7 @@ SpAlgo is a python library with special algorithms which can help you in your ed
 ## Overview
 SpAlgo is a python library with special algorithms which can help you in your education or any other purpose.
 By now, this library contains some algorithms for the following items and other algorithms will be added soon.
-  - Subsequence
+  - Sequence
   - Array
   - Matrix
   - Knapsack
@@ -49,7 +49,7 @@ SpAlgo was programmed with ease-of-use in mind. First, import Matrix, Array and 
 for more exact usage documents you can see the example files [here](https://github.com/Amir-Shamsi/SpAlgo/blob/master/src/examples)
 
 ```Python
-from SpAlgo import Matrix, Array, LongestMax, Knapsack
+from SpAlgo import Matrix, Array, MaxSubseq, Knapsack
 ```
 
 then you can them bassed on what you need.
@@ -69,7 +69,7 @@ findPeak()
 findAllPeak()
 ```
 
-for `subsequence` the current available methods are:
+for `sequence` the current available methods are:
 ```python
 maximmum_sum()
 subsequence()
