@@ -18,12 +18,15 @@ class Knapsack:
                  capacity: Union[int, float],
                  weight: list[Union[int, float]],
                  value: list[Union[int, float]],
-                 is_crumbly: bool = False):
+                 is_crumbly: bool = False,
+                 ultimate_item: bool = False):
+        self._ultimate_item = ultimate_item
         self._value = value
         self._weight = weight
         self._capacity = capacity
         self._st_capacity = capacity
         self._is_crumbly = is_crumbly
+
         self._picker_()
 
     def _picker_(self):
@@ -32,7 +35,7 @@ class Knapsack:
         for item in range(len(self._weight)):
             _val_pack.append(Pack(self._weight[item], self._value[item], item))
 
-        _sp_sort._sort_(_val_pack, 0, len(_val_pack) - 1)
+        _qsort._sort_(_val_pack, 0, len(_val_pack) - 1)
         _val_pack.reverse()
 
         self._total_value = 0
