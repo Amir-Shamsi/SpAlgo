@@ -1,5 +1,5 @@
 from typing import Union
-from . import _sp_sort
+from . import _qsort
 from ._pack import Pack
 
 class Knapsack:
