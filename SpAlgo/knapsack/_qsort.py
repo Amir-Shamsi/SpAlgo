@@ -1,6 +1,5 @@
 from . import _pack
 
-
 def _partition_(_items: list[_pack.Pack], low, high):
     i = low - 1
     pivot = _items[high]
