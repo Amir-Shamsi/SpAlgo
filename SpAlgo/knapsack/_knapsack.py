@@ -13,6 +13,7 @@ class Knapsack:
     _is_crumbly = None
     _total_value = None
     _crumbled_item = None
+    _ultimate_item = None
 
     def __init__(self,
                  capacity: Union[int, float],
@@ -39,22 +40,39 @@ class Knapsack:
         _val_pack.reverse()
 
         self._total_value = 0
-        for item in _val_pack:
-            _cur_wt = int(item.wt)
-            _cur_val = int(item.val)
-            if self._capacity - _cur_wt >= 0:
-                self._capacity -= _cur_wt
-                self._total_value += _cur_val
-                self._pack.append({'weight': _cur_wt, 'value': _cur_val})
-            else:
-                if self._is_crumbly:
-                    fraction = self._capacity / _cur_wt
-                    self._total_value += _cur_val * fraction
-                    self._capacity = int(self._capacity - (_cur_wt * fraction))
-                    self._pack.append({'weight': _cur_wt * fraction, 'value': _cur_val * fraction})
-                    self._crumbled_item = {'weight': _cur_wt * fraction, 'value': _cur_val * fraction,
-                                           'from_item': {'weight': _cur_wt, 'value': _cur_val}}
-                break
+
+        if not self._ultimate_item:
+            for item in _val_pack:
+                _cur_wt = int(item.wt)
+                _cur_val = int(item.val)
+                if self._capacity - _cur_wt >= 0:
+                    self._capacity -= _cur_wt
+                    self._total_value += _cur_val
+                    self._pack.append({'weight': _cur_wt, 'value': _cur_val})
+                else:
+                    if self._is_crumbly:
+                        fraction = self._capacity / _cur_wt
+                        self._total_value += _cur_val * fraction
+                        self._capacity = int(self._capacity - (_cur_wt * fraction))
+                        self._pack.append({'weight': _cur_wt * fraction, 'value': _cur_val * fraction})
+                        self._crumbled_item = {'weight': _cur_wt * fraction, 'value': _cur_val * fraction,
+                                               'original_weight': _cur_wt, 'original_value': _cur_val}
+                    break
+        else:
+            _inner_index = 0
+            while True:
+                _cur_wt = _val_pack[_inner_index].wt
+                _cur_val = _val_pack[_inner_index].val
+                if _val_pack[_inner_index].wt <= self._capacity:
+                    self._capacity -= _cur_wt
+                    self._total_value += _cur_val
+                    self._pack.append({'weight': _cur_wt, 'value': _cur_val})
+
+                if _cur_wt > self._capacity:
+                    _inner_index += 1
+
+                if _inner_index == len(_val_pack):
+                    break
 
     def getPack(self):
         return self._pack
