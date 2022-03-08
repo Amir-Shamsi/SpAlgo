@@ -96,9 +96,11 @@ Supported versions of python for this library are as follow:
 * [Python v3.10](https://www.python.org/downloads/release/python-3100/)
 
 ## License
-Read license 
+This project is under BST license read it 
 [here](https://github.com/Amir-Shamsi/SpAlgo/blob/master/LICENSE):
 ```
+All rights reserved.
+
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
 in the Software without restriction, including without limitation the rights
