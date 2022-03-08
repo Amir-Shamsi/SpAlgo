@@ -33,7 +33,7 @@ life is so short so you don't need to spend your time implementing these algorit
 
 ## Usage
 
-In the following paragraphs, I am going to describe how you can get and use Scrapeasy for your own projects.
+In the following paragraphs, I am going to describe how you can get and use SpAlgo for your own projects.
 
 ###  Getting it
 
