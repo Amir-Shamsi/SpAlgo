@@ -9,6 +9,6 @@ from SpAlgo._knapsack._knapsack import Knapsack
 from SpAlgo._closest_pair._closest import ClosestPair
 from SpAlgo._closest_pair._point import Point
 
-__version__ = "0.3.0"
+__version__ = "0.3.1"
 __all__ = ['Matrix', 'MaxSubseq', 'Array', 'Knapsack', 'ClosestPair',
            'Point']

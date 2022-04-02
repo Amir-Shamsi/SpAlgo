@@ -10,7 +10,7 @@ with open('docs/VERSION') as v:
 
 setup(
     name='SpAlgo',
-    packages=find_packages(include=['SpAlgo.*']),
+    packages=find_packages('.', exclude=['tests', 'tests.*']),
 
     version=_version,
     description='SpAlgo is a python library with special algorithms which will helps you in your education and your tasks.',
