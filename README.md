@@ -27,6 +27,7 @@ By now, this library contains some algorithms for the following items and other 
   - Array
   - Matrix
   - Knapsack
+  - Closest Pair
 
 life is so short so you don't need to spend your time implementing these algorithms so we recommend you use SpAlgo if you want to have a faster experience.
 
@@ -48,14 +49,14 @@ SpAlgo was programmed with ease-of-use in mind. First, import Matrix, Array and 
 
 for more exact usage documents you can see the example files [here](https://github.com/Amir-Shamsi/SpAlgo/blob/master/src/examples)
 
-```Python
-from SpAlgo import Matrix, Array, MaxSubseq, Knapsack
+```Python3
+from SpAlgo import Matrix, Array, MaxSubseq, Knapsack, ClosestPair, Point
 ```
 
 then you can them bassed on what you need.
 
-for `array` the current available methods are:
-```python
+1. `Array` the current available methods are:
+```python3
 findPeak()
 findAllPeak()
 findFisrtPeak()
@@ -63,25 +64,31 @@ findMaxPeak()
 findMaxPeak()
 ```
 
-for `matrix` the current available methods are:
-```python
+2. `Matrix` the current available methods are:
+```python3
 findPeak()
 findAllPeak()
 ```
 
-for `sequence` the current available methods are:
-```python
+3. `Sequence` the current available methods are:
+```python3
 maximmum_sum()
 subsequence()
 ```
 
-for `knapsack` the current available methods are:
-```python
+4. `Knapsack` the current available methods are:
+```python3
 getPack()
 getTotalValue()
 getUsedWeight()
 getWastedWeight()
 getCrumbledItem()
+```
+
+5. `ClosestPair` the current available methods are:
+```python3
+get_min_distance()
+get_closest_pair()
 ```
 
 ## Support 
