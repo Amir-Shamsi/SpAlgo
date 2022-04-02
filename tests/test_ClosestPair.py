@@ -582,4 +582,10 @@ def test_closest_pair():
     assert ClosestPair(_p2).get_min_distance() == 1.4142135623730951
     assert ClosestPair(_p3).get_min_distance() == 1.0
     assert ClosestPair(_p4).get_min_distance() == 1.4402401511516227
-    assert ClosestPair(_p5).get_min_distance() == 0.8208826801145499
+    _closest_pair = ClosestPair(_p5)
+    assert _closest_pair.get_min_distance() == 0.8208826801145499
+    assert _closest_pair.get_closest_pair(_type=list) == [[-294.9439482948592, -109.58471258222704],
+                                                          [-294.97996728117107, -109.58471258222704]]
+
+    assert _closest_pair.get_closest_pair(_type=tuple) == [(-294.9439482948592, -109.58471258222704),
+                                                           (-294.97996728117107, -109.58471258222704)]
