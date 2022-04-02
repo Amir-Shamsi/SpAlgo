@@ -7,6 +7,7 @@ class ClosestPair:
     _size = None
     _points_set: list[Point] = None
     _min_distance = None
+    _min_pairs = {}
 
     """
     ClosestPair class to find the smallest distance from a given set of points.
@@ -49,17 +50,19 @@ class ClosestPair:
                          (f_point.y - s_point.y) *
                          (f_point.y - s_point.y))
 
-    def _brute_force_algo(self):
+    def _brute_force_algo(self, _points_set, _size):
         """
         A Brute Force method to return the smallest distance between two points in P[] of size _size
         this only use for the small size of _set
         :return: the distance of the closest pair
         """
         min_val = float('inf')
-        for i in range(self._size):
-            for j in range(i + 1, self._size):
-                if self._dist_cal(self._points_set[i], self._points_set[j]) < min_val:
-                    min_val = self._dist_cal(self._points_set[i], self._points_set[j])
+        for i in range(_size):
+            for j in range(i + 1, _size):
+                if self._dist_cal(_points_set[i], _points_set[j]) < min_val:
+                    min_val = self._dist_cal(_points_set[i], _points_set[j])
+                    self._min_pairs[min_val] = [_points_set[i], _points_set[j]]
+
         return min_val
 
     def _strip_closest(self, _strip, _size, _dist):
@@ -89,6 +92,7 @@ class ClosestPair:
             j = i + 1
             while j < _size and (_strip[j].y - _strip[i].y) < min_val:
                 min_val = self._dist_cal(_strip[i], _strip[j])
+                self._min_pairs[min_val] = [_strip[i], _strip[j]]
                 j += 1
 
         return min_val
@@ -106,15 +110,14 @@ class ClosestPair:
         If there are 2 or 3 points, then use brute force to not take so much memory
         """
         if _size <= 3:
-            return self._brute_force_algo()
+            return self._brute_force_algo(_point_set, _size)
 
         """Find the middle point"""
         mid = _size // 2
         midPoint = _point_set[mid]
 
         """keep a copy of left and right branch"""
-        _set_l = _point_set[:mid]
-        _set_r = _point_set[mid:]
+        _set_l, _set_r = _point_set[:mid], _point_set[mid:]
 
         """
         Consider the vertical line passing through the middle point calculate
@@ -122,28 +125,31 @@ class ClosestPair:
         """
         dl = self._closest_util(_set_l, _set_d_copy, mid)
         dr = self._closest_util(_set_r, _set_d_copy, _size - mid)
-
-        # Find the smaller of two distances
-        d = min(dl, dr)
+        di = min(dl, dr)
 
         """
         Build an array strip[] that contains points close (closer than d)
         to the line passing through the middle point
         """
-        stripP = []
-        stripQ = []
+        strip_p, strip_dp = [], []
         lr = _set_l + _set_r
         for i in range(_size):
-            if abs(lr[i].x - midPoint.x) < d:
-                stripP.append(lr[i])
-            if abs(_set_d_copy[i].x - midPoint.x) < d:
-                stripQ.append(_set_d_copy[i])
+            if abs(lr[i].x - midPoint.x) < di:
+                strip_p.append(lr[i])
+            if abs(_set_d_copy[i].x - midPoint.x) < di:
+                strip_dp.append(_set_d_copy[i])
 
-        stripP.sort(key=lambda point: point.y)  # <-- REQUIRED
-        min_a = min(d, self._strip_closest(stripP, len(stripP), d))
-        min_b = min(d, self._strip_closest(stripQ, len(stripQ), d))
+        strip_p.sort(key=lambda point: point.y)
+        min_a = min(di, self._strip_closest(strip_p, len(strip_p), di))
+        min_b = min(di, self._strip_closest(strip_dp, len(strip_dp), di))
 
         return min(min_a, min_b)
 
     def get_min_distance(self):
         return self._min_distance
+
+    def get_closest_pair(self, _type: type = Point):
+        pairs = self._min_pairs[self._min_distance]
+        if _type == Point:
+            return pairs
+        return [_type([pairs[0].x, pairs[1].y]), _type([pairs[1].x, pairs[1].y])]
