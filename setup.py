@@ -34,7 +34,7 @@ setup(
 
     keywords=['SpAlgo', 'Algorithm', 'Matrix', 'Array'],
     setup_requires=['pytest-runner'],
-    tests_require=['pytest'],
+    tests_require=['pytest==7.0.1'],
     test_suite='tests',
     include_package_data=True,
     zip_safe=False,
