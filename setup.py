@@ -12,8 +12,7 @@ def get_version():
         contents = ver.read()
     pattern = r"^__version__ = '(.*?)'$"
     return re.search(pattern, contents, re.MULTILINE).group(1)
-print(get_version())
-exit(0)
+
 setup(
     name='SpAlgo',
     packages=find_packages('.', exclude=['tests', 'tests.*']),
