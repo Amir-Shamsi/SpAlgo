@@ -32,8 +32,8 @@ setup(
     download_url='https://github.com/Amir-Shamsi/SpAlgo/archive/refs/tags/' + get_version() + '.tar.gz',
 
     keywords=['SpAlgo', 'Algorithm', 'Matrix', 'Array'],
-    setup_requires=['pytest-runner'],
-    tests_require=['pytest==7.0.1'],
+    setup_requires=['pytest-runner==5.3.1'],
+    tests_require=['pytest==7.1.1'],
     test_suite='tests',
     include_package_data=True,
     zip_safe=False,
