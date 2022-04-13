@@ -73,8 +73,27 @@ for ``matrix`` the current available methods are:
 for ``subsequence`` the current available methods are:
 
 .. code-block:: python
+
     maximmum_sum()
     subsequence()
+
+for ``Knapsack`` the current available methods are:
+
+.. code-block:: python
+
+    getPack()
+    getTotalValue()
+    getUsedWeight()
+    getWastedWeight()
+    getCrumbledItem()
+    
+for ``ClosestPair`` the current available methods are:
+
+.. code-block:: python
+
+    get_min_distance()
+    get_closest_pair()
+
 
 -------
 Support
@@ -90,4 +109,31 @@ Supported versions of python for this library are as follow:
   - `Python v3.8 <https://www.python.org/downloads/release/python-380/>`_
   - `Python v3.9 <https://www.python.org/downloads/release/python-390/>`_
   - `Python v3.10 <https://www.python.org/downloads/release/python-3100/>`_
+  
+-------
+License
+-------
+
+This project is under MIT license read it `here <https://github.com/Amir-Shamsi/SpAlgo/blob/master/LICENSE>`_:
+
+.. code-block:: 
+
+    Permission is hereby granted, free of charge, to any person obtaining a copy
+    of this software and associated documentation files (the "Software"), to deal
+    in the Software without restriction, including without limitation the rights
+    to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+    copies of the Software, and to permit persons to whom the Software is
+    furnished to do so, subject to the following conditions:
+
+    The above copyright notice and this permission notice shall be included in all
+    copies or substantial portions of the Software.
+
+    THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+    IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+    FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+    AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+    LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+    OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+    SOFTWARE.
+
 
