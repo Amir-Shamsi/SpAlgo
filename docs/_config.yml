@@ -1,7 +1,5 @@
 theme: jekyll-theme-midnight
 
 exclude:
-  - Gemfile
-  - Gemfile.lock
   - README.md
   - LICENCE
