@@ -47,7 +47,7 @@ for more exact usage documents you can see the `example <https://github.com/Amir
 
 .. code-block:: python
 
-    from SpAlgo import Matrix, Array, LongestMax
+    from SpAlgo import Matrix, Array, MaxSubseq, Knapsack, ClosestPair, Point
 
 
 
