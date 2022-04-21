@@ -1,6 +1,3 @@
-#######
-SpAlgo
-#######
 
 .. image:: https://raw.githubusercontent.com/Amir-Shamsi/SpAlgo/master/spalgo.png
 
