@@ -92,9 +92,9 @@ for ``ClosestPair`` the current available methods are:
     get_closest_pair()
 
 
--------
+*******
 Support
--------
+*******
 
 Supported versions of python for this library are as follow:
 
@@ -107,9 +107,9 @@ Supported versions of python for this library are as follow:
   - `Python v3.9 <https://www.python.org/downloads/release/python-390/>`_
   - `Python v3.10 <https://www.python.org/downloads/release/python-3100/>`_
   
--------
+*******
 License
--------
+*******
 
 This project is under MIT license read it `here <https://github.com/Amir-Shamsi/SpAlgo/blob/master/LICENSE>`_:
 
