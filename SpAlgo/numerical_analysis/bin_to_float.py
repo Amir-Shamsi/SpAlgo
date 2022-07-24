@@ -34,3 +34,39 @@ class F32bit:
 
     def get_floating_point(self):
         return self._floating_point
+
+
+class F64bit:
+    def __init__(self, binary_sequence):
+        try:
+            if not re.match("^[01]+$", binary_sequence.strip()):
+                raise ValueError
+
+            self.bin_seq = [int(item) for item in binary_sequence]
+
+            if len(self.bin_seq) != 64: raise IndexError(f'Binary sequence must be 64-bits but {len(self.bin_seq)}-bits given!')
+
+        except ValueError:
+            raise ValueError('Please make sure the binary sequence only contains 0 and 1!')
+
+        self.__calc__()
+
+    def __calc__(self):
+        self._exponent = self._significand = 0
+
+        for index in range(11, 0, -1):
+            self._exponent += self.bin_seq[index] * (2 ** (abs(index - 11)))
+
+        for index in range(63, 11, -1):
+            self._significand += self.bin_seq[index] / (2 ** (52 - abs(index - 63)))
+
+        self._floating_point = ((-1) ** self.bin_seq[0]) * (2 ** (self._exponent - 1023)) * (1 + self._significand)
+
+    def get_exponent(self):
+        return self._exponent
+
+    def get_significand(self):
+        return self._significand
+
+    def get_floating_point(self):
+        return self._floating_point
