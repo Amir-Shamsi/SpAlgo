@@ -95,6 +95,18 @@ get_min_distance()
 get_closest_pair()
 ```
 
+6. `F32bit` and `F64bit` the current available methods are:
+```python3
+get_exponent()
+get_significand()
+get_floating_point()
+```
+
+7. `Newton` and `Secant` the current available methods are:
+```python3
+solve()
+```
+
 ## Support 
 Supported versions of python for this library are as follow:
 * [Python v3](https://www.python.org/downloads/release/python-300/)
