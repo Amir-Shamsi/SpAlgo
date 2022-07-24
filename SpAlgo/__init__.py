@@ -12,6 +12,6 @@ from SpAlgo.numerical_analysis.bin_to_float import F32bit, F64bit
 from SpAlgo.numerical_analysis.newton_method import Newton
 from SpAlgo.numerical_analysis.secant_method import Secant
 
-__version__ = '0.3.1'
+__version__ = '0.4.0'
 __all__ = ['Matrix', 'MaxSubseq', 'Array', 'Knapsack', 'ClosestPair',
            'Point', 'F32bit', 'F64bit', 'Newton', 'Secant']
