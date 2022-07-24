@@ -1,7 +1,9 @@
 import re
 
 class F32bit:
-    def __init__(self, binary_sequence):
+    def __init__(self, binary_sequence: str | list) -> None:
+        binary_sequence = ''.join(binary_sequence) if isinstance(binary_sequence, list) else binary_sequence
+
         try:
             if not re.match("^[01]+$", binary_sequence.strip()):
                 raise ValueError
@@ -15,7 +17,7 @@ class F32bit:
 
         self.__calc__()
 
-    def __calc__(self):
+    def __calc__(self) -> None:
         self._exponent = self._significand = 0
 
         for index in range(8, 0, -1):
@@ -26,18 +28,20 @@ class F32bit:
 
         self._floating_point = ((-1) ** self.bin_seq[0]) * (2 ** (self._exponent - 127)) * (1 + self._significand)
 
-    def get_exponent(self):
+    def get_exponent(self) -> int | float:
         return self._exponent
 
-    def get_significand(self):
+    def get_significand(self) -> int | float:
         return self._significand
 
-    def get_floating_point(self):
+    def get_floating_point(self) -> int | float:
         return self._floating_point
 
 
 class F64bit:
-    def __init__(self, binary_sequence):
+    def __init__(self, binary_sequence: str) -> None:
+        binary_sequence = ''.join(binary_sequence) if isinstance(binary_sequence, list) else binary_sequence
+
         try:
             if not re.match("^[01]+$", binary_sequence.strip()):
                 raise ValueError
@@ -51,7 +55,7 @@ class F64bit:
 
         self.__calc__()
 
-    def __calc__(self):
+    def __calc__(self) -> None:
         self._exponent = self._significand = 0
 
         for index in range(11, 0, -1):
@@ -62,11 +66,11 @@ class F64bit:
 
         self._floating_point = ((-1) ** self.bin_seq[0]) * (2 ** (self._exponent - 1023)) * (1 + self._significand)
 
-    def get_exponent(self):
+    def get_exponent(self) -> int | float:
         return self._exponent
 
-    def get_significand(self):
+    def get_significand(self) -> int | float:
         return self._significand
 
-    def get_floating_point(self):
+    def get_floating_point(self) -> int | float:
         return self._floating_point
