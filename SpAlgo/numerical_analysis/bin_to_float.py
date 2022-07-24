@@ -2,6 +2,24 @@ import re
 
 class F32bit:
     def __init__(self, binary_sequence: str | list) -> None:
+        """
+        A number in 32 bit single precision IEEE 754 binary floating point standard representation requires three
+         building elements:
+            * sign (it takes 1 bit, and it's either 0 for positive or 1 for negative numbers)
+            * exponent (8 bits)
+            * mantissa (23 bits)
+
+        binary_sequence: The binary sequence in shap of string of list of 0 and 1
+
+        Example
+        -------
+        >>> bin_seq = '00000100010001000100010010111010'
+        >>> f = F32bit(binary_sequence=bin_seq)
+        >>> f.get_exponent()
+        >>> f.get_significand()
+        >>> f.get_floating_point()
+        """
+
         binary_sequence = ''.join(binary_sequence) if isinstance(binary_sequence, list) else binary_sequence
 
         try:
@@ -40,6 +58,23 @@ class F32bit:
 
 class F64bit:
     def __init__(self, binary_sequence: str) -> None:
+        """
+        A number in 64 bit single precision IEEE 754 binary floating point standard representation requires three
+         building elements:
+            * sign (it takes 1 bit, and it's either 0 for positive or 1 for negative numbers)
+            * exponent (11 bits)
+            * mantissa (52 bits)
+
+        binary_sequence: The binary sequence in shap of string of list of 0 and 1
+
+        Example
+        -------
+        >>> bin_seq = '0000010001000100010001001011101011010100010001000100010010111010'
+        >>> f = F64bit(binary_sequence=bin_seq)
+        >>> f.get_exponent()
+        >>> f.get_significand()
+        >>> f.get_floating_point()
+        """
         binary_sequence = ''.join(binary_sequence) if isinstance(binary_sequence, list) else binary_sequence
 
         try:
