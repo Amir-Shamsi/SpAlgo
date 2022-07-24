@@ -28,6 +28,10 @@ By now, this library contains some algorithms for the following items and other 
   - Matrix
   - Knapsack
   - Closest Pair
+  - F32bit
+  - F64bit
+  - Newton's Method
+  - Secant Method
 
 life is so short so you don't need to spend your time implementing these algorithms so we recommend you use SpAlgo if you want to have a faster experience.
 
