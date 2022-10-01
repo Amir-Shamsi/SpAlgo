@@ -1,0 +1,5 @@
+theme: jekyll-theme-midnight
+
+exclude:
+  - README.md
+  - LICENCE

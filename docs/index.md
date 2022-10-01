@@ -28,10 +28,6 @@ By now, this library contains some algorithms for the following items and other 
   - Matrix
   - Knapsack
   - Closest Pair
-  - F32bit
-  - F64bit
-  - Newton's Method
-  - Secant Method
 
 life is so short so you don't need to spend your time implementing these algorithms so we recommend you use SpAlgo if you want to have a faster experience.
 
@@ -95,18 +91,6 @@ get_min_distance()
 get_closest_pair()
 ```
 
-6. `F32bit` and `F64bit` the current available methods are:
-```python3
-get_exponent()
-get_significand()
-get_floating_point()
-```
-
-7. `Newton` and `Secant` the current available methods are:
-```python3
-solve()
-```
-
 ## Support 
 Supported versions of python for this library are as follow:
 * [Python v3](https://www.python.org/downloads/release/python-300/)
@@ -140,4 +124,3 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 ```
-
